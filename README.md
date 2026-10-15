@@ -1,55 +1,62 @@
-# MobileTech Utility App
+# Weather & Wellness
 
-This is a basic Android app template for **Assessment 1: Utility App**.
-It provides the structure for a simple tabular UI using **Jetpack Compose** and **Material Design 3**.
-
----
-
-## Getting Started
-
-### How to Run
-1. Clone or download this repo  
-2. Open in Android Studio  
-3. Run on an emulator or physical device (API 26+ recommended)  
+**Student Name:** Mohammed Khan  
+**App Name:** Weather & Wellness (`au.edu.jcu.assessment.utilityapp`)
 
 ---
 
-## Composables
-
-### UtilityApp()
-- Contains the screen layout using a Scaffold
-- Toggles content between Utility and Settings
-
-### UtilityScreen()
-- Displays a simple counter (replace with your utility logic)  
-- Includes a button to increment the counter
-
-### SettingsScreen()
-- Placeholder for user preferences or configuration  
-- Can be extended to modify main screen behavior (e.g., theme, units, limits)  
+## 🌤️ App Overview
+**Weather & Wellness** is a feature-rich, modern Android utility application that bridges real-time meteorological data with daily mental well-being. It provides live weather forecasts across major Australian cities (Townsville, Cairns, Brisbane, Sydney, Melbourne) and pairs them with daily inspirational mindfulness quotes.
 
 ---
 
-## Key Concepts Covered
+## 📱 Core Features & Implementation
 
-| Week | Concept                        | Used In                          |
-|------|--------------------------------|----------------------------------|
-| 1    | Kotlin + Android Studio         | MainActivity.kt |
-| 2    | Jetpack Compose Layouts         | UtilityApp(), UtilityScreen(), SettingsScreen()   |
-| 3    | Material Design 3               | MobileTechUtilityAppTheme, MaterialTheme.typography |
-| 4    | ViewModel | Not included in starter          |
-| 5    | Retrofit  | Not included in starter          |
+1. **Real-Time Weather Forecasting (Retrofit & Open-Meteo API):**
+   - Integrates with the public Open-Meteo REST API (`https://api.open-meteo.com/`).
+   - Uses **Retrofit 2** with Gson converter and **Kotlin Coroutines** (`suspend`) for asynchronous, non-blocking network requests.
+   - Displays temperature (`°C`/`°F`), apparent temperature ("feels like"), humidity, wind speed, and dynamic weather condition descriptions.
+
+2. **City Selection & Settings (Jetpack ViewModel & State):**
+   - Allows users to seamlessly switch between multiple Australian cities.
+   - Provides a settings toggle to switch temperature units and show/hide daily wellness quotes.
+   - State is managed reactively via Jetpack `ViewModel`, `viewModelScope`, and Compose `mutableStateOf`, ensuring configuration changes (like screen rotation) are handled seamlessly.
+
+3. **Daily Mindfulness & Motivation:**
+   - Features curated inspirational quotes designed to promote mental wellness.
+   - Includes a refresh button to cycle through daily quotes.
+
+4. **Custom App Logo & Material 3 Design:**
+   - Features a custom adaptive launcher icon featuring a sun and clouds with a sky-blue gradient background.
+   - Built entirely with **Jetpack Compose Material 3** (`MaterialTheme`, `Card`, `Switch`, `NavigationBar`, etc.) adhering to modern Android UI guidelines.
 
 ---
 
-## Suggested Extensions
-- Replace counter with a real utility (e.g., hydration tracker, timer)  
-- Add a ViewModel for state management  
-- Use SharedPreferences or DataStore to persist settings  
-- Add a simple API call using Retrofit (e.g., fetch weather or quotes)  
+## 🖼️ Application Screenshot
+
+![Weather & Wellness App UI](app_screenshot.png)
+
+---
+
+## 🛠️ Architecture & Tech Stack
+- **Language:** Kotlin 2.0+
+- **UI Toolkit:** Jetpack Compose (Material 3)
+- **Architecture Pattern:** MVVM (Model-View-ViewModel)
+- **Networking:** Retrofit 2, Gson, OkHttp
+- **Asynchronous Programming:** Kotlin Coroutines & Flow
+- **Minimum SDK:** API 26 (Android 8.0+)
+- **Target/Compile SDK:** API 36
+
+---
+
+## 🚀 Getting Started
+
+1. Clone or download this repository.
+2. Open the project in **Android Studio**.
+3. Ensure you have internet connection enabled (the app requires the `INTERNET` permission to fetch live weather data).
+4. Run the app on an Android emulator or physical device (API 26+).
 
 ---
 
 ## 📚 License
-This template is provided for educational use in CP3406.  
-Feel free to modify and extend it for your assessment.
+Developed for educational assessment in Mobile Technologies.
