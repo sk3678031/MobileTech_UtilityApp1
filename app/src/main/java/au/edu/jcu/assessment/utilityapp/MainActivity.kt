@@ -263,12 +263,12 @@ fun UtilityScreen(viewModel: UtilityViewModel) {
             }
         }
     } else {
-        // Portrait Layout (non-scrollable)
+        // Portrait Layout (non-scrollable, compact and well-adjusted)
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(20.dp),
-            verticalArrangement = Arrangement.spacedBy(16.dp)
+                .padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             // App Header
             Row(
@@ -279,12 +279,12 @@ fun UtilityScreen(viewModel: UtilityViewModel) {
                 Column {
                     Text(
                         text = "Weather & Wellness",
-                        style = MaterialTheme.typography.headlineMedium,
+                        style = MaterialTheme.typography.titleLarge,
                         fontWeight = FontWeight.Bold
                     )
                     Text(
                         text = "Location: ${selectedCity.name}",
-                        style = MaterialTheme.typography.bodyMedium,
+                        style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.primary
                     )
                 }
@@ -351,12 +351,12 @@ fun UtilityScreen(viewModel: UtilityViewModel) {
                     elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
                 ) {
                     Column(
-                        modifier = Modifier.padding(20.dp),
-                        verticalArrangement = Arrangement.spacedBy(12.dp)
+                        modifier = Modifier.padding(16.dp),
+                        verticalArrangement = Arrangement.spacedBy(10.dp)
                     ) {
                         Text(
                             text = "Current Conditions",
-                            style = MaterialTheme.typography.titleLarge,
+                            style = MaterialTheme.typography.titleMedium,
                             fontWeight = FontWeight.SemiBold
                         )
 
@@ -367,13 +367,13 @@ fun UtilityScreen(viewModel: UtilityViewModel) {
                         ) {
                             Text(
                                 text = displayTemp,
-                                style = MaterialTheme.typography.displayMedium,
+                                style = MaterialTheme.typography.headlineLarge,
                                 fontWeight = FontWeight.Bold,
                                 color = MaterialTheme.colorScheme.primary
                             )
                             Text(
                                 text = condition,
-                                style = MaterialTheme.typography.titleMedium
+                                style = MaterialTheme.typography.bodyMedium
                             )
                         }
 
@@ -400,8 +400,8 @@ fun UtilityScreen(viewModel: UtilityViewModel) {
                     )
                 ) {
                     Column(
-                        modifier = Modifier.padding(20.dp),
-                        verticalArrangement = Arrangement.spacedBy(12.dp)
+                        modifier = Modifier.padding(16.dp),
+                        verticalArrangement = Arrangement.spacedBy(10.dp)
                     ) {
                         Text(
                             text = "Daily Mindfulness & Motivation",
@@ -411,7 +411,7 @@ fun UtilityScreen(viewModel: UtilityViewModel) {
                         )
                         Text(
                             text = quote,
-                            style = MaterialTheme.typography.bodyLarge,
+                            style = MaterialTheme.typography.bodyMedium,
                             fontStyle = FontStyle.Italic
                         )
                         OutlinedButton(
