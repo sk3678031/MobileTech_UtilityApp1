@@ -10,6 +10,11 @@
 
 ---
 
+## 🎨 Logo & Theming Consistency
+The app's UI theme and color palette (Sky Blue and Sunny Amber) are fully matched to the custom sun-and-clouds adaptive launcher icon, ensuring seamless brand consistency across the app and home screen.
+
+---
+
 ## 📱 Core Features & Implementation
 
 1. **Real-Time Weather Forecasting (Retrofit & Open-Meteo API):**
@@ -26,15 +31,18 @@
    - Features curated inspirational quotes designed to promote mental wellness.
    - Includes a refresh button to cycle through daily quotes.
 
-4. **Custom App Logo & Material 3 Design:**
-   - Features a custom adaptive launcher icon featuring a sun and clouds with a sky-blue gradient background.
+4. **Material 3 Design:**
    - Built entirely with **Jetpack Compose Material 3** (`MaterialTheme`, `Card`, `Switch`, `NavigationBar`, etc.) adhering to modern Android UI guidelines.
 
 ---
 
-## 🖼️ Application Screenshot
+## 🖼️ Application Screenshots
 
-![Weather & Wellness App UI](app_screenshot.png)
+### 1. Main Dashboard Screen (Utility)
+![Weather & Wellness Main Screen](app_screenshot.png)
+
+### 2. Settings Preferences Screen
+![Weather & Wellness Settings Screen](settings_screenshot.png)
 
 ---
 
