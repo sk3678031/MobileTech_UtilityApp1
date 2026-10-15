@@ -263,12 +263,12 @@ fun UtilityScreen(viewModel: UtilityViewModel) {
             }
         }
     } else {
-        // Portrait Layout (non-scrollable, compact and well-adjusted)
+        // Portrait Layout: weighted cards to fill vertical space perfectly without bottom empty space
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(16.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp)
+            verticalArrangement = Arrangement.spacedBy(10.dp)
         ) {
             // App Header
             Row(
@@ -304,7 +304,7 @@ fun UtilityScreen(viewModel: UtilityViewModel) {
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(200.dp),
+                        .weight(1f),
                     contentAlignment = Alignment.Center
                 ) {
                     CircularProgressIndicator()
@@ -314,7 +314,7 @@ fun UtilityScreen(viewModel: UtilityViewModel) {
                     colors = CardDefaults.cardColors(
                         containerColor = MaterialTheme.colorScheme.errorContainer
                     ),
-                    modifier = Modifier.fillMaxWidth()
+                    modifier = Modifier.fillMaxWidth().weight(1f)
                 ) {
                     Column(
                         modifier = Modifier.padding(16.dp),
@@ -347,12 +347,16 @@ fun UtilityScreen(viewModel: UtilityViewModel) {
 
                 // Weather Card
                 Card(
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .weight(1f),
                     elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
                 ) {
                     Column(
-                        modifier = Modifier.padding(16.dp),
-                        verticalArrangement = Arrangement.spacedBy(10.dp)
+                        modifier = Modifier
+                            .fillMaxHeight()
+                            .padding(16.dp),
+                        verticalArrangement = Arrangement.SpaceAround
                     ) {
                         Text(
                             text = "Current Conditions",
@@ -394,14 +398,18 @@ fun UtilityScreen(viewModel: UtilityViewModel) {
             // Daily Wellness / Mindfulness Quote Card
             if (showQuote) {
                 Card(
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .weight(1f),
                     colors = CardDefaults.cardColors(
                         containerColor = MaterialTheme.colorScheme.surfaceVariant
                     )
                 ) {
                     Column(
-                        modifier = Modifier.padding(16.dp),
-                        verticalArrangement = Arrangement.spacedBy(10.dp)
+                        modifier = Modifier
+                            .fillMaxHeight()
+                            .padding(16.dp),
+                        verticalArrangement = Arrangement.SpaceAround
                     ) {
                         Text(
                             text = "Daily Mindfulness & Motivation",
