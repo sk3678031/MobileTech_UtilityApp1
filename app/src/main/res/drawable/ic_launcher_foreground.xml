@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Sun (Yellow/Orange circle) -->
+    <path
+        android:fillColor="#FFC107"
+        android:pathData="M72,36m-16,0a16,16 0,1 1,32 0a16,16 0,1 1,-32 0" />
+
+    <!-- Sun rays -->
+    <path
+        android:strokeColor="#FFE082"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:pathData="M72,12L72,16M72,56L72,60M48,36L44,36M96,36L100,36M55,19L52,16M89,53L92,56M55,53L52,56M89,19L92,16" />
+
+    <!-- Fluffy Cloud -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M34,76 C25.163,76 18,68.837 18,60 C18,52.318 23.352,45.922 30.6,44.4 C33.0,36.8 40.0,31.4 48.4,31.4 C57.2,31.4 64.6,37.8 66.2,46.2 C72.8,47.2 78,53.0 78,60 C78,68.837 70.837,76 62,76 L34,76 Z" />
+</vector>
