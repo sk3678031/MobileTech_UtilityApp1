@@ -31,18 +31,26 @@ The app's UI theme and color palette (Sky Blue and Sunny Amber) are fully matche
    - Features curated inspirational quotes designed to promote mental wellness.
    - Includes a refresh button to cycle through daily quotes.
 
-4. **Material 3 Design:**
-   - Built entirely with **Jetpack Compose Material 3** (`MaterialTheme`, `Card`, `Switch`, `NavigationBar`, etc.) adhering to modern Android UI guidelines.
+4. **Responsive Portrait & Landscape Views:**
+   - **Portrait Mode:** Clean, non-scrollable vertical layout with cards weighted to fill available screen height perfectly.
+   - **Landscape Mode:** Non-scrollable two-pane side-by-side layout showing both weather and motivation quote simultaneously, separated by a distinct vertical border line.
+
+5. **Material 3 Design & Professional Sub-Packages:**
+   - Built entirely with **Jetpack Compose Material 3**.
+   - Organized into professional sub-packages (`data`, `ui.viewmodel`, `ui.screen`, `ui.components`, `ui.theme`).
 
 ---
 
 ## 🖼️ Application Screenshots
 
-### 1. Main Dashboard Screen (Utility)
+### 1. Main Dashboard Screen (Portrait)
 ![Weather & Wellness Main Screen](app_screenshot.png)
 
 ### 2. Settings Preferences Screen
 ![Weather & Wellness Settings Screen](settings_screenshot.png)
+
+### 3. Landscape Two-Pane View (Side-by-Side with Border Line)
+![Weather & Wellness Landscape View](landscape_screenshot.png)
 
 ---
 
