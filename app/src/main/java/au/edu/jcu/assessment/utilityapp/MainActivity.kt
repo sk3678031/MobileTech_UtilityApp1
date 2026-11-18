@@ -41,16 +41,16 @@ fun UtilityApp(viewModel: UtilityViewModel = viewModel()) {
                     icon = { Icon(Icons.Default.Home, contentDescription = "Utility") },
                     label = { Text("Utility") },
                     selected = selectedTab == "Utility",
-                    onClick = { selectedTab = "Utility" }
+                    onClick = { selectedTab = "Utility" },
                 )
                 NavigationBarItem(
                     icon = { Icon(Icons.Default.Settings, contentDescription = "Settings") },
                     label = { Text("Settings") },
                     selected = selectedTab == "Settings",
-                    onClick = { selectedTab = "Settings" }
+                    onClick = { selectedTab = "Settings" },
                 )
             }
-        }
+        },
     ) { innerPadding ->
         Box(modifier = Modifier.padding(innerPadding)) {
             when (selectedTab) {
@@ -64,7 +64,21 @@ fun UtilityApp(viewModel: UtilityViewModel = viewModel()) {
 @Preview(showBackground = true)
 @Composable
 fun UtilityAppPreview() {
+    val sampleWeather = au.edu.jcu.assessment.utilityapp.data.WeatherResponse(
+        latitude = -19.2590,
+        longitude = 146.8169,
+        timezone = "Australia/Brisbane",
+        current = au.edu.jcu.assessment.utilityapp.data.CurrentWeather(
+            time = "2025-01-01T12:00",
+            temperature2m = 28.5,
+            relativeHumidity2m = 65,
+            apparentTemperature = 30.2,
+            weatherCode = 1,
+            windSpeed10m = 12.4,
+        ),
+    )
+    val previewViewModel = remember { UtilityViewModel(initialWeatherResponse = sampleWeather) }
     MobileTech_UtilityAppTheme {
-        UtilityApp()
+        UtilityApp(viewModel = previewViewModel)
     }
 }

@@ -12,11 +12,12 @@ import kotlinx.coroutines.launch
 data class CityOption(
     val name: String,
     val latitude: Double,
-    val longitude: Double
+    val longitude: Double,
 )
 
 class UtilityViewModel(
-    private val repository: WeatherRepository = WeatherRepository()
+    private val repository: WeatherRepository = WeatherRepository(),
+    initialWeatherResponse: WeatherResponse? = null,
 ) : ViewModel() {
 
     val availableCities = listOf(
@@ -24,22 +25,22 @@ class UtilityViewModel(
         CityOption("Cairns, QLD", -16.9186, 145.7781),
         CityOption("Brisbane, QLD", -27.4698, 153.0251),
         CityOption("Sydney, NSW", -33.8688, 151.2093),
-        CityOption("Melbourne, VIC", -37.8136, 144.9631)
+        CityOption("Melbourne, VIC", -37.8136, 144.9631),
     )
 
     var selectedCity by mutableStateOf(availableCities[0])
         private set
 
-    var isCelsius by mutableStateOf(true)
+    var isCelsius by mutableStateOf(value = true)
         private set
 
-    var showQuote by mutableStateOf(true)
+    var showQuote by mutableStateOf(value = true)
         private set
 
-    var weatherResponse by mutableStateOf<WeatherResponse?>(null)
+    var weatherResponse by mutableStateOf<WeatherResponse?>(initialWeatherResponse)
         private set
 
-    var isLoading by mutableStateOf(false)
+    var isLoading by mutableStateOf(value = false)
         private set
 
     var errorMessage by mutableStateOf<String?>(null)
@@ -50,14 +51,16 @@ class UtilityViewModel(
         "\"Every morning we are born again. What we do today is what matters most.\"",
         "\"Small daily progress over time leads to staggering results.\"",
         "\"Take a deep breath. You are doing better than you think.\"",
-        "\"Nature does not hurry, yet everything is accomplished.\""
+        "\"Nature does not hurry, yet everything is accomplished.\"",
     )
 
     var currentQuote by mutableStateOf(dailyQuotes.random())
         private set
 
     init {
-        loadWeather()
+        if (weatherResponse == null) {
+            loadWeather()
+        }
     }
 
     fun loadWeather() {
